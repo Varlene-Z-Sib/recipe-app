@@ -1,0 +1,44 @@
+﻿<Window x:Class="RecipeAppWPF.AddRecipeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add Recipe" Height="400" Width="400"
+		WindowState="Maximized">
+    <Grid Margin="10">
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\zazis\OneDrive\Desktop\POE\RecipeAppWPF\bin\Debug\net8.0-windows\_image\let.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="Recipe Name:"/>
+            <TextBox x:Name="RecipeNameInput" Margin="0,0,0,10"/>
+            <TextBlock Text="Ingredients:"/>
+            <ListBox x:Name="IngredientsListBox" Height="100" Margin="0,0,0,10"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Ingrediant Name:"/>
+                <TextBox x:Name="IngredientNameInput" Width="80" Margin="0,0,10,0"/>
+                <TextBlock Text="Quantity:"/>
+                <TextBox x:Name="IngredientQuantityInput" Width="60" Margin="0,0,10,0"/>
+                <TextBlock Text="Unit:"/>
+                <TextBox x:Name="IngredientUnitInput" Width="60" Margin="0,0,10,0"/>
+                <TextBlock Text="Calories:"/>
+                <TextBox x:Name="IngredientCaloriesInput" Width="60" Margin="0,0,10,0"/>
+                <TextBlock Text="Food Group:"/>
+                <TextBox x:Name="IngredientFoodGroupInput" Width="80"/>
+                <Button Content="Add" Click="AddIngredient_Click" Margin="10,0,0,0"/>
+            </StackPanel>
+            <TextBlock Text="Steps:"/>
+            <ListBox x:Name="StepsListBox" Height="100" Margin="0,0,0,10"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBox x:Name="StepDescriptionInput" Width="300"/>
+                <Button Content="Add" Click="AddStep_Click" Margin="10,0,0,0"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Button Grid.Row="2" Content="Add Recipe" Click="AddRecipe_Click" HorizontalAlignment="Right"/>
+    </Grid>
+</Window>
